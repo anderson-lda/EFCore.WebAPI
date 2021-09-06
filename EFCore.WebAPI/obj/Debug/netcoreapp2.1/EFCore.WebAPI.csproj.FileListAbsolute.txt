@@ -5,6 +5,10 @@ C:\Users\ander\source\repos\EFCore.WebAPI\EFCore.WebAPI\bin\Debug\netcoreapp2.1\
 C:\Users\ander\source\repos\EFCore.WebAPI\EFCore.WebAPI\bin\Debug\netcoreapp2.1\EFCore.WebAPI.runtimeconfig.dev.json
 C:\Users\ander\source\repos\EFCore.WebAPI\EFCore.WebAPI\bin\Debug\netcoreapp2.1\EFCore.WebAPI.dll
 C:\Users\ander\source\repos\EFCore.WebAPI\EFCore.WebAPI\bin\Debug\netcoreapp2.1\EFCore.WebAPI.pdb
+C:\Users\ander\source\repos\EFCore.WebAPI\EFCore.WebAPI\bin\Debug\netcoreapp2.1\EFCore.Domain.dll
+C:\Users\ander\source\repos\EFCore.WebAPI\EFCore.WebAPI\bin\Debug\netcoreapp2.1\EFCore.Repo.dll
+C:\Users\ander\source\repos\EFCore.WebAPI\EFCore.WebAPI\bin\Debug\netcoreapp2.1\EFCore.Domain.pdb
+C:\Users\ander\source\repos\EFCore.WebAPI\EFCore.WebAPI\bin\Debug\netcoreapp2.1\EFCore.Repo.pdb
 C:\Users\ander\source\repos\EFCore.WebAPI\EFCore.WebAPI\obj\Debug\netcoreapp2.1\EFCore.WebAPI.csproj.AssemblyReference.cache
 C:\Users\ander\source\repos\EFCore.WebAPI\EFCore.WebAPI\obj\Debug\netcoreapp2.1\EFCore.WebAPI.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\ander\source\repos\EFCore.WebAPI\EFCore.WebAPI\obj\Debug\netcoreapp2.1\EFCore.WebAPI.AssemblyInfoInputs.cache
@@ -13,6 +17,7 @@ C:\Users\ander\source\repos\EFCore.WebAPI\EFCore.WebAPI\obj\Debug\netcoreapp2.1\
 C:\Users\ander\source\repos\EFCore.WebAPI\EFCore.WebAPI\obj\Debug\netcoreapp2.1\EFCore.WebAPI.RazorAssemblyInfo.cache
 C:\Users\ander\source\repos\EFCore.WebAPI\EFCore.WebAPI\obj\Debug\netcoreapp2.1\EFCore.WebAPI.RazorAssemblyInfo.cs
 C:\Users\ander\source\repos\EFCore.WebAPI\EFCore.WebAPI\obj\Debug\netcoreapp2.1\EFCore.WebAPI.RazorTargetAssemblyInfo.cache
+C:\Users\ander\source\repos\EFCore.WebAPI\EFCore.WebAPI\obj\Debug\netcoreapp2.1\EFCore.WebAPI.csproj.CopyComplete
 C:\Users\ander\source\repos\EFCore.WebAPI\EFCore.WebAPI\obj\Debug\netcoreapp2.1\EFCore.WebAPI.dll
 C:\Users\ander\source\repos\EFCore.WebAPI\EFCore.WebAPI\obj\Debug\netcoreapp2.1\EFCore.WebAPI.pdb
 C:\Users\ander\source\repos\EFCore.WebAPI\EFCore.WebAPI\obj\Debug\netcoreapp2.1\EFCore.WebAPI.genruntimeconfig.cache
