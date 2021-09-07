@@ -15,19 +15,20 @@ namespace EFCore.WebAPI.Controllers
 
     public class BatalhaController : ControllerBase
     {
-        private readonly HeroiContexto _context;
-        public BatalhaController(HeroiContexto context)
+        private readonly IEFCoreRepository _repo;
+        public BatalhaController(IEFCoreRepository repo)
         {
-            _context = context;
+            this._repo = repo;
         }
 
-        //GET: api/Heroi
+        //GET: api/Batalha
         [HttpGet]
-        public ActionResult Get()
+        public async Task<IActionResult> Get()
         {
             try
             {
-                return Ok(new Batalha());
+                var batalhas = await _repo.GetAllBatalhas();
+                return Ok(batalhas);
             }
             catch (Exception ex)
             {
@@ -35,51 +36,85 @@ namespace EFCore.WebAPI.Controllers
             }
         }
 
-        //GET: api/Heroi/5
+        //GET: api/Batalha/id
         [HttpGet("{id}", Name = "GetBatalha")]
-        public ActionResult Get(int id)
+        public async Task<IActionResult> Get(int id)
         {
-            return Ok("value");
+            try
+            {
+                var batalha = await _repo.GetBatalhaById(id, true);
+                return Ok(batalha);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Erro: {ex}");
+            }
         }
 
         //POST: api/Heroi
         [HttpPost]
-        public ActionResult Post(Batalha model)
+        public async Task<IActionResult> Post(Batalha model)
         {
             try
             {
-                _context.Batalhas.Add(model);
-                _context.SaveChanges();
+                _repo.Add(model);
+                if (await _repo.SaveChangeAssync())
+                {
+                    return Ok("Salvo com sucesso");
+                }
 
-                return Ok("BAZINGA");
             }
             catch (Exception ex)
             {
                 return BadRequest($"Erro: {ex}");
             }
+            return BadRequest("Não salvou");
         }
 
-        //PUT: api/Heroi
+        //PUT: api/Batalha
         [HttpPut("{id}")]
-        public ActionResult Put(int id, Batalha model)
+        public async Task<IActionResult> Put(int id, Batalha model)
         {
             try
             {
-                //if(_context.Herois.Find(id) != null)
-                if (_context.Batalhas.AsNoTracking().FirstOrDefault(
-                        h => h.Id == id
-                    ) != null)
+                var heroi = await _repo.GetBatalhaById(id);
+                if (heroi != null)
                 {
-                    _context.Update(model);
-                    _context.SaveChanges();
-                    return Ok("BAZINGA");
+                    {
+                        _repo.Update(model);
+                        if (await _repo.SaveChangeAssync())
+                            return Ok("Atualizado com sucesso");
+                    }
                 }
-                return Ok("Não encontrado");
             }
             catch (Exception ex)
             {
                 return BadRequest($"Erro: {ex}");
             }
+            return BadRequest("Não salvou");
+        }
+
+
+    [HttpDelete("{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            try
+            {
+                var batalha = await _repo.GetBatalhaById(id);
+                if (batalha != null)
+                {
+                    {
+                        _repo.Delete(batalha);
+                        if (await _repo.SaveChangeAssync())
+                            return Ok("Deletado com sucesso");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"Erro: {ex}");
+            }
+            return BadRequest("Não salvou");
         }
     }
 }
